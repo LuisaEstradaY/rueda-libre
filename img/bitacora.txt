@@ -15,3 +15,17 @@ Javascript nos permite darle dinamismo e interacción
 Ejemplo: HTML es el esqueleto de nuestro cuerpo; CSS es la piel, todo
 lo externo que lo compone y Javascript son los músculos que permiten que todo 
 funcione.
+
+3. TABLA DE RUTAS RELATIVAS DEL SITIO
+-------------------------------------------------------------
+Origen                  | Destino                 | Ruta escrita
+------------------------|-------------------------|------------------------
+index.html              | index.html              | index.html
+index.html              | paginas/tarifas.html    | paginas/tarifas.html
+index.html              | paginas/reservas.html   | paginas/reservas.html
+paginas/tarifas.html    | index.html              | ../index.html
+paginas/tarifas.html    | paginas/tarifas.html    | tarifas.html
+paginas/tarifas.html    | paginas/reservas.html   | reservas.html
+paginas/reservas.html   | index.html              | ../index.html
+paginas/reservas.html   | paginas/tarifas.html    | tarifas.html
+paginas/reservas.html   | paginas/reservas.html   | reservas.html
