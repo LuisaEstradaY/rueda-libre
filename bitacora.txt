@@ -112,3 +112,82 @@ MINIRETO 6 - DECISIONES DE CONTROLES DEL FORMULARIO
 	seleccionar una sola opcion de un grupo excluyente.
 3. El plan y el recorrido usan select porque cada campo ofrece un conjunto
 	cerrado de opciones y solo se elige una.
+
+MINIRETO 7 - TABLA DE PRUEBAS DE VALIDACION NATIVA
+=================================================
+Campo                  | Dato de prueba          | Esperado  | Obtenido
+-----------------------|-------------------------|-----------|----------
+Nombre completo        | vacio                   | invalido  | invalido
+Nombre completo        | Al                      | invalido  | invalido
+Documento              | 12AB567                 | invalido  | invalido
+Correo                 | sin-correo              | invalido  | invalido
+Celular                | 3001234567              | valido    | valido
+Celular                | 1234567890              | invalido  | invalido
+Celular                | 300123                  | invalido  | invalido
+Fecha                  | 2026-10-31              | invalido  | invalido
+Fecha                  | 2027-01-01              | invalido  | invalido
+Cantidad               | 0                       | invalido  | invalido
+Cantidad               | 7                       | invalido  | invalido
+Tipo de bicicleta      | sin seleccion          | invalido  | invalido
+Plan                   | sin seleccion          | invalido  | invalido
+Politicas              | casilla desmarcada      | invalido  | invalido
+Formulario completo    | valores validos         | valido    | valido
+Comentarios            | intento de 301 caracteres | maximo 300 | limitado a 300
+
+Las reglas se comprobaron con la API nativa de validez del navegador; nombre
+corto y limite de comentarios tambien se verificaron escribiendo en los
+campos. Un formulario completo con datos validos pasa la validacion; cada
+caso invalido bloquea el envio.
+
+MINIRETO 8 - AUDITORIA DE ACCESIBILIDAD
+=======================================
+Hallazgo / comprobacion                 | Correccion o resultado
+---------------------------------------|--------------------------------------
+Idioma de documentos                  | Las tres paginas declaran lang="es".
+Texto alternativo del logo             | Alt "Logo de Rueda Libre", conservado.
+Alternativas para imagenes de contenido| Alt describe ciclista, bicicleta y ruta.
+Jerarquia de encabezados               | Un h1 por pagina; h2/h3 sin saltos.
+Texto y nombre de enlaces               | Enlaces describen destino; nav tiene
+									  | aria-label="Navegación principal".
+Grupo de tipo de bicicleta             | Radios agrupados con fieldset/legend.
+Etiquetas de controles                 | Cada label usa for asociado a id.
+Orden de teclado                       | Secuencia inspeccionada: menu, contacto,
+										  | campos en orden visual, confirmacion,
+										  | envio y enlace del pie.
+Div/span                               | No hay div ni span en las tres paginas.
+
+El orden de tabulacion se inspecciono en el navegador: menu, contacto, datos
+personales, grupo de bicicleta, fecha, plan, cantidad, recorrido, comentarios,
+politicas, envio y pie. El navegador puede exponer subcontroles internos de
+fecha. El grupo de radios es nativo y tiene leyenda; la confirmacion manual de
+flechas y Espacio queda pendiente porque la herramienta de navegador no
+reprodujo esas teclas sobre controles nativos.
+
+MINIRETO 8 - CONTRASTE Y MAPA DE USO DE COLOR
+============================================
+Contrastes evaluados en WebAIM Contrast Checker, con criterios WCAG 2.1.
+Combinacion                         | Relacion | Clasificacion
+------------------------------------|----------|--------------------------
+Blanco #FFFFFF sobre Verde #1E7A4F | 5.31:1   | Apta para texto normal
+Blanco #FFFFFF sobre Naranja #F39A2B| 2.21:1   | No apta para texto
+Azul #14213D sobre Naranja #F39A2B | 7.20:1   | Apta para texto normal
+Azul #14213D sobre Crema #FAF6EF   | 14.82:1  | Apta para texto normal
+Gris #5B6470 sobre Crema #FAF6EF   | 5.56:1   | Apta para texto normal
+Verde #1E7A4F sobre Crema #FAF6EF  | 4.93:1   | Apta para texto normal
+Naranja #F39A2B sobre Crema #FAF6EF| 2.05:1   | No apta para texto
+Blanco #FFFFFF sobre Azul #14213D  | 15.97:1  | Apta para texto normal
+
+Mapa de uso: Crema como fondo general; Azul Noche para titulos y encabezados;
+Gris Asfalto para texto secundario; Azul Noche o Verde Ruta para texto y
+enlaces sobre Crema. Botones Verde Ruta pueden llevar texto blanco; botones
+Naranja Pedal deben llevar texto Azul Noche. No usar texto blanco sobre
+Naranja ni texto Naranja sobre Crema. Naranja queda para acentos decorativos
+o para texto Azul Noche; no se usara Naranja como texto sobre Crema.
+Ninguna combinacion evaluada cae en el rango de 3:1 a 4.49:1 (solo texto grande).
+
+Publicacion GitHub Pages v0.2
+-----------------------------
+URL publicada: https://luisastraday.github.io/rueda-libre/
+GitHub Pages activado desde la rama main y la carpeta /(root). La URL tambien
+se agrego a la homepage y a la descripcion publica del repositorio.
+Verificar despues del push las tres paginas y sus recursos en produccion.

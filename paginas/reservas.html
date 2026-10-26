@@ -52,50 +52,52 @@
 
           <p>
             <label for="nombre-completo">Nombre completo</label>
-            <input type="text" id="nombre-completo" name="nombre_completo" autocomplete="name">
+            <input type="text" id="nombre-completo" name="nombre_completo" autocomplete="name" required minlength="3">
           </p>
 
           <p>
             <label for="documento">Número de documento</label>
-            <input type="text" id="documento" name="numero_documento" autocomplete="off">
+            <input type="text" id="documento" name="numero_documento" autocomplete="off" required pattern="[0-9]{6,10}" title="Ingresa entre 6 y 10 dígitos, sin puntos ni espacios.">
           </p>
 
           <p>
             <label for="correo">Correo electrónico</label>
-            <input type="email" id="correo" name="correo" autocomplete="email">
+            <input type="email" id="correo" name="correo" autocomplete="email" required>
           </p>
 
           <p>
             <label for="celular">Celular</label>
-            <input type="tel" id="celular" name="celular" autocomplete="tel">
+            <input type="tel" id="celular" name="celular" autocomplete="tel" required pattern="3[0-9]{9}" title="Ingresa 10 dígitos y comienza por 3, por ejemplo 3001234567.">
           </p>
         </fieldset>
 
         <fieldset>
           <legend>Tu alquiler</legend>
 
-          <p>Tipo de bicicleta</p>
-          <p>
-            <input type="radio" id="bicicleta-urbana" name="tipo_bicicleta" value="urbana">
-            <label for="bicicleta-urbana">Urbana</label>
-          </p>
-          <p>
-            <input type="radio" id="bicicleta-montana" name="tipo_bicicleta" value="montana">
-            <label for="bicicleta-montana">Montaña</label>
-          </p>
-          <p>
-            <input type="radio" id="bicicleta-electrica" name="tipo_bicicleta" value="electrica">
-            <label for="bicicleta-electrica">Eléctrica</label>
-          </p>
+          <fieldset>
+            <legend>Tipo de bicicleta</legend>
+            <p>
+              <input type="radio" id="bicicleta-urbana" name="tipo_bicicleta" value="urbana" required>
+              <label for="bicicleta-urbana">Urbana</label>
+            </p>
+            <p>
+              <input type="radio" id="bicicleta-montana" name="tipo_bicicleta" value="montana" required>
+              <label for="bicicleta-montana">Montaña</label>
+            </p>
+            <p>
+              <input type="radio" id="bicicleta-electrica" name="tipo_bicicleta" value="electrica" required>
+              <label for="bicicleta-electrica">Eléctrica</label>
+            </p>
+          </fieldset>
 
           <p>
             <label for="fecha-alquiler">Fecha del alquiler</label>
-            <input type="date" id="fecha-alquiler" name="fecha_alquiler">
+            <input type="date" id="fecha-alquiler" name="fecha_alquiler" min="2026-11-01" max="2026-12-31" required>
           </p>
 
           <p>
             <label for="plan">Plan</label>
-            <select id="plan" name="plan">
+            <select id="plan" name="plan" required>
               <option value="">Selecciona un plan</option>
               <option value="1-hora">1 hora</option>
               <option value="medio-dia">Medio día</option>
@@ -105,7 +107,7 @@
 
           <p>
             <label for="cantidad">Cantidad de bicicletas</label>
-            <input type="number" id="cantidad" name="cantidad_bicicletas">
+            <input type="number" id="cantidad" name="cantidad_bicicletas" min="1" max="6" step="1" required>
           </p>
 
           <p>
@@ -124,11 +126,11 @@
 
           <p>
             <label for="comentarios">Comentarios</label>
-            <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+            <textarea id="comentarios" name="comentarios" rows="4" maxlength="300"></textarea>
           </p>
 
           <p>
-            <input type="checkbox" id="acepta-politicas" name="acepta_politicas" value="si">
+            <input type="checkbox" id="acepta-politicas" name="acepta_politicas" value="si" required>
             <label for="acepta-politicas">Acepto las políticas de alquiler</label>
           </p>
         </fieldset>
