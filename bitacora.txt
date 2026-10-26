@@ -39,6 +39,10 @@ formulario de reserva antes de enviarlo.
 
 4. Rutas relativas del sitio
 ----------------------------
+La navegacion compartida usa enlaces relativos. Desde index.html se antepone
+paginas/ para abrir las paginas internas; desde paginas/ se usa ../ para subir
+a la portada y el nombre del archivo para navegar entre paginas de esa carpeta.
+
 Origen                  | Destino                 | Ruta escrita
 ------------------------|-------------------------|------------------------
 index.html              | index.html              | index.html
