@@ -190,4 +190,6 @@ Publicacion GitHub Pages v0.2
 URL publicada: https://luisaestraday.github.io/rueda-libre/
 GitHub Pages activado desde la rama main y la carpeta /(root). La URL tambien
 se agrego a la homepage y a la descripcion publica del repositorio.
-Verificar despues del push las tres paginas y sus recursos en produccion.
+La automatizacion .github/workflows/pages.yml despliega cada push a main.
+Verificacion online: portada, tarifas, reservas y recursos locales responden
+200 OK; el formulario y los enlaces relativos se comprobaron en produccion.
