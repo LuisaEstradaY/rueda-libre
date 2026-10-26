@@ -187,7 +187,7 @@ Ninguna combinacion evaluada cae en el rango de 3:1 a 4.49:1 (solo texto grande)
 
 Publicacion GitHub Pages v0.2
 -----------------------------
-URL publicada: https://luisastraday.github.io/rueda-libre/
+URL publicada: https://luisaestraday.github.io/rueda-libre/
 GitHub Pages activado desde la rama main y la carpeta /(root). La URL tambien
 se agrego a la homepage y a la descripcion publica del repositorio.
 Verificar despues del push las tres paginas y sus recursos en produccion.
