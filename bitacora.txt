@@ -103,3 +103,12 @@ body
 
 No se requieren div ni span: header, nav, main, section, article, aside y
 footer expresan las regiones y relaciones necesarias en estas tres paginas.
+
+MINIRETO 6 - DECISIONES DE CONTROLES DEL FORMULARIO
+===================================================
+1. El numero de documento usa input type="text" para conservar posibles ceros
+	iniciales y formatos que no son cantidades para calcular.
+2. El tipo de bicicleta usa botones radio con un mismo name porque se debe
+	seleccionar una sola opcion de un grupo excluyente.
+3. El plan y el recorrido usan select porque cada campo ofrece un conjunto
+	cerrado de opciones y solo se elige una.
