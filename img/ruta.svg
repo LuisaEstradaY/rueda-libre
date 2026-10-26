@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480" role="img" aria-labelledby="title">
+  <title id="title">Ruta guiada entre montañas y edificios de Medellin</title>
+  <rect width="800" height="480" fill="#dcebe4"/>
+  <path d="M0 286 176 113l118 129 161-171 194 214 83-92 68 66v221H0Z" fill="#86ae99"/>
+  <path d="m0 333 176-134 117 145 161-163 195 171 83-108 68 70v166H0Z" fill="#36765f"/>
+  <path d="M0 368h800v112H0Z" fill="#e8c979"/>
+  <path d="M0 411q207-60 395-6t405-12v87H0Z" fill="#f3f0db"/>
+  <g fill="#df704a" stroke="#183d33" stroke-width="8" stroke-linejoin="round">
+    <path d="M300 263h77v70h-77zM392 235h86v98h-86zM494 274h64v59h-64z"/>
+  </g>
+  <g fill="none" stroke="#183d33" stroke-linecap="round" stroke-linejoin="round" stroke-width="9">
+    <circle cx="278" cy="390" r="34"/><circle cx="374" cy="390" r="34"/><path d="m278 390 31-62 37 62h-68l39-47h30l27 47m72 0 31-62 37 62h-68l39-47h30l27 47"/><circle cx="470" cy="390" r="34"/><circle cx="566" cy="390" r="34"/>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480" role="img" aria-labelledby="title">
+  <title id="title">Bicicleta urbana</title>
+  <rect width="800" height="480" fill="#f3e9d2"/>
+  <circle cx="400" cy="240" r="170" fill="#e5d9bb"/>
+  <g fill="none" stroke="#176b55" stroke-linecap="round" stroke-linejoin="round" stroke-width="15">
+    <circle cx="246" cy="320" r="96"/><circle cx="554" cy="320" r="96"/>
+    <path d="m246 320 82-158 112 158H246l101-131h111l96 131M328 162h-55m185 0h59"/>
+  </g>
+  <circle cx="328" cy="162" r="12" fill="#e3a72f"/>
+  <path d="M495 120h77l19 45h-69Z" fill="#df704a"/>
+  <text x="400" y="455" text-anchor="middle" fill="#173b32" font-family="Georgia,serif" font-size="28">Lista para recorrer la ciudad</text>
+</svg>

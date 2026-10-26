@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-labelledby="title">
+  <title id="title">Un paseo en bicicleta por Medellin</title>
+  <rect width="1200" height="540" fill="#d9eee5"/>
+  <circle cx="956" cy="111" r="58" fill="#e7b444"/>
+  <path d="M0 360 230 142l181 172 204-228 286 274 119-124 180 160v144H0Z" fill="#78a995"/>
+  <path d="m0 423 220-191 184 185 205-204 283 239 134-152 174 150v90H0Z" fill="#347762"/>
+  <path d="M0 455q183-53 367-6t379 3 454-12v100H0Z" fill="#f2c86e"/>
+  <path d="M0 492q248-47 484-9t716-4v61H0Z" fill="#eaf3df"/>
+  <g transform="translate(612 310)" fill="none" stroke="#183d33" stroke-linecap="round" stroke-linejoin="round" stroke-width="12">
+    <circle cx="-84" cy="96" r="56"/><circle cx="72" cy="96" r="56"/>
+    <path d="m-84 96 54-106 102 106h-156l67-89h88l73 89M-30-10h-36m137 17h40"/>
+  </g>
+  <circle cx="582" cy="300" r="13" fill="#e7b444"/>
+  <path d="m580 317-31 53 63 14 23-49-42-18" fill="#df704a"/>
+  <path d="m550 370-42 42m106-28 42 45m-78-116-27-31m45 10 33-21" fill="none" stroke="#183d33" stroke-linecap="round" stroke-width="12"/>
+</svg>
