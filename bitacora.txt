@@ -227,3 +227,65 @@ box-sizing content-box: width computado 357.33 px, padding izquierdo/derecho
 Con box-sizing border-box: el ancho exterior medido es 357.33 px; padding y
 bordes quedan incluidos. La diferencia es 50 px (48 px de padding + 2 px de
 borde). La regla global * usa border-box.
+
+MINIRETO 12 - CIERRE DE SEMANA: RUEDA LIBRE v1.0
+================================================
+Resumen de los MiniRetos
+N. | Aporte al producto
+---|--------------------------------------------------------------
+1  | Repositorio Git, estructura inicial, index y bitacora.
+2  | Inicio con contenido, listas, imagenes y enlaces.
+3  | Tablas accesibles de alquiler y recorridos con rutas relativas.
+4  | Sitio navegable: menu comun, pie y pagina inicial de reservas.
+5  | Estructura semantica: header, nav, main, secciones y articulos.
+6  | Formulario de reserva con controles asociados y grupos.
+7  | Validacion nativa, pruebas de reglas y uso de teclado.
+8  | Auditoria de accesibilidad, contraste y publicacion en Pages.
+9  | Variables de color y hoja externa de estilos de marca.
+10 | Estados hover/focus, pagina activa y especificidad sin important.
+11 | Box model, tarjetas, tablas, formulario y ancho legible.
+12 | Etiqueta Nuevo, acceso fijo a WhatsApp, revision y lanzamiento v1.0.
+
+Detalles de v1.0: la tarjeta de bicicletas electricas lleva la etiqueta Nuevo
+anclada arriba a la derecha. El enlace WhatsApp aparece fijo en las tres
+paginas y el relleno inferior del documento evita que cubra el pie. Los
+encabezados, menus, h1 en main, llamadas a la accion y pies mantienen estructura
+y estilos compartidos desde css/styles.css.
+
+Revision final: enlaces, imagenes, estilos, formulario y Pages se probaron en
+produccion. Se mantuvieron los colores con contraste aprobado. Las proximas
+mejoras serian sustituir el numero de WhatsApp de ejemplo por el numero oficial,
+conectar el formulario a un servicio real, confirmar manualmente con teclado
+fisico la navegacion de extremo a extremo y ampliar pruebas en moviles reales.
+
+URL del lanzamiento v1.0: https://luisaestraday.github.io/rueda-libre/
+
+Verificacion final de posicionamiento y consistencia:
+- Las tres paginas comparten logo de 200 px, menu Inicio/Tarifas y rutas/Reservas,
+	un h1 directo en main y el mismo pie (nombre, correo, 2026).
+- La tarjeta electrica tiene position relative; Nuevo usa position absolute,
+	right 1 rem y top -0.5 rem. En viewport movil no se superpone al titulo.
+- WhatsApp es un enlace visible, fijo y enfocable en las tres paginas; target
+	blank y rel noopener noreferrer. Su rectangulo queda a 1.5 px del pie cuando
+	se llega al final, y el padding inferior de 5 rem del body reserva su espacio.
+- Hover/focus conserva Azul Noche sobre Naranja Pedal y foco con contorno Azul.
+- Prueba en 390 px: no hay overflow horizontal, las imagenes quedan dentro de
+	tarjetas y las tablas largas se desplazan en su propio contenedor.
+- Network local: documentos, hoja CSS, logos, portada, bici y ruta dan 200; no
+	se detectaron 404. Formulario vacio bloqueado por required; controles intactos.
+
+Control de calidad v1.0
+-----------------------
+En las tres paginas se verificaron el mismo logo de 200 px, el mismo menu de
+tres enlaces, un h1 dentro de main y el mismo texto de pie. El enlace activo
+identifica cada pagina. WhatsApp usa position fixed, href a wa.me, target
+_blank y texto visible; en movil su caja queda a 24 px del borde derecho e
+inferior. body reserva 5 rem mas el area segura inferior, de modo que el boton
+no se superpone al pie al llegar al final. Es enfocable y conserva contorno.
+
+La etiqueta Nuevo es position absolute dentro de .servicio-electrico, cuyo
+position relative la ancla a la tarjeta. En medicion local el badge queda
+arriba del titulo sin cubrirlo ni alterar el flujo. Las tarjetas y tablas no
+desbordan; las tablas largas tienen desplazamiento horizontal interno en movil.
+El formulario vacio sigue bloqueado por required. QA de red: las tres paginas,
+hoja CSS, logo, portada, bicicleta y ruta responden 200; no se hallaron 404.

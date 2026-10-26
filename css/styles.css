@@ -1,3 +1,4 @@
+/* Variables */
 :root {
   --verde-ruta: #1E7A4F;
   --naranja-pedal: #F39A2B;
@@ -12,6 +13,7 @@
   color-scheme: light;
 }
 
+/* Base and box model */
 *,
 *::before,
 *::after {
@@ -22,8 +24,30 @@ body {
   background-color: var(--crema);
   color: var(--azul-noche);
   margin: 0;
+  padding-bottom: calc(5rem + env(safe-area-inset-bottom));
 }
 
+a {
+  color: var(--verde-ruta);
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--azul-noche);
+  text-decoration-thickness: 0.16em;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--azul-noche);
+  outline-offset: 3px;
+}
+
+/* Shared page layout */
 header {
   align-items: center;
   display: flex;
@@ -34,23 +58,10 @@ header {
 }
 
 header > img {
+  display: block;
   height: auto;
   max-width: 100%;
-}
-
-header nav ul {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--espacio-1);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-header h1 {
-  flex-basis: 100%;
-  margin: 0;
+  width: 12.5rem;
 }
 
 main {
@@ -62,6 +73,10 @@ main {
 
 main > section {
   margin-block: var(--espacio-4);
+}
+
+main > h1 {
+  margin-block: var(--espacio-3);
 }
 
 main > section[aria-labelledby="inicio-titulo"] {
@@ -76,23 +91,20 @@ main > section[aria-labelledby="inicio-titulo"] > img {
 }
 
 footer {
+  margin-inline: auto;
+  max-width: var(--ancho-contenido);
   padding: var(--espacio-2);
 }
 
-a {
-  color: var(--verde-ruta);
-  text-decoration-thickness: 0.1em;
-  text-underline-offset: 0.18em;
-}
-
-a:hover {
-  color: var(--azul-noche);
-  text-decoration-thickness: 0.16em;
-}
-
-a:focus {
-  outline: 3px solid var(--azul-noche);
-  outline-offset: 3px;
+/* Navigation */
+header nav ul {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 #menu a {
@@ -109,7 +121,6 @@ a:focus {
 
 #menu a.activo {
   color: var(--verde-ruta);
-  font-weight: 600;
   text-decoration: underline;
   text-decoration-thickness: 0.16em;
   text-underline-offset: 0.3em;
@@ -124,21 +135,10 @@ a:focus {
 #menu a:focus {
   background-color: var(--verde-ruta);
   color: #FFFFFF;
-  outline: 3px solid var(--azul-noche);
   outline-offset: 3px;
 }
 
-.boton-reserva {
-  background-color: var(--verde-ruta);
-  border: 2px solid var(--verde-ruta);
-  border-radius: 0.25rem;
-  color: #FFFFFF;
-  display: inline-block;
-  font-weight: 600;
-  padding: 0.7rem 1rem;
-  text-decoration: none;
-}
-
+/* Service cards and calls to action */
 #nuestros-servicios {
   display: grid;
   gap: var(--espacio-3);
@@ -154,6 +154,7 @@ a:focus {
   border: 1px solid var(--gris-asfalto);
   border-radius: 0.5rem;
   padding: var(--espacio-3);
+  position: relative;
   width: 100%;
 }
 
@@ -165,6 +166,52 @@ a:focus {
   width: 100%;
 }
 
+.etiqueta-nuevo {
+  background-color: var(--naranja-pedal);
+  border: 1px solid var(--azul-noche);
+  border-radius: 0.25rem;
+  color: var(--azul-noche);
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  position: absolute;
+  right: var(--espacio-2);
+  top: calc(-1 * var(--espacio-1));
+}
+
+.boton-reserva,
+button {
+  background-color: var(--verde-ruta);
+  border: 2px solid var(--verde-ruta);
+  border-radius: 0.25rem;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+}
+
+.boton-reserva:hover,
+.boton-reserva:focus,
+button:hover,
+button:focus {
+  background-color: var(--naranja-pedal);
+  border-color: var(--azul-noche);
+  color: var(--azul-noche);
+}
+
+.boton-reserva:focus,
+button:focus {
+  outline-offset: 3px;
+}
+
+#formulario-reserva button {
+  padding: var(--espacio-2) var(--espacio-4);
+}
+
+/* Tables */
 table {
   border-collapse: collapse;
   margin-block: var(--espacio-2);
@@ -196,6 +243,7 @@ tbody th {
   color: var(--azul-noche);
 }
 
+/* Reservation form */
 #formulario-reserva form {
   margin-inline: auto;
   max-width: 46rem;
@@ -226,8 +274,20 @@ tbody th {
 #formulario-reserva input:not([type="radio"]):not([type="checkbox"]),
 #formulario-reserva select,
 #formulario-reserva textarea {
+  background-color: #FFFFFF;
+  border: 2px solid var(--gris-asfalto);
+  border-radius: 0.2rem;
+  color: var(--azul-noche);
   display: block;
+  padding: 0.45rem;
   width: 100%;
+}
+
+#formulario-reserva input:focus,
+#formulario-reserva select:focus,
+#formulario-reserva textarea:focus {
+  border-color: var(--azul-noche);
+  outline-offset: 2px;
 }
 
 #formulario-reserva fieldset fieldset p {
@@ -241,10 +301,39 @@ tbody th {
   margin: 0;
 }
 
-#formulario-reserva button {
-  padding: var(--espacio-2) var(--espacio-4);
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--verde-ruta);
 }
 
+/* Fixed WhatsApp link */
+.whatsapp-fijo {
+  background-color: var(--verde-ruta);
+  border: 2px solid var(--verde-ruta);
+  border-radius: 0.5rem;
+  bottom: calc(var(--espacio-3) + env(safe-area-inset-bottom));
+  color: #FFFFFF;
+  display: inline-block;
+  font-weight: 700;
+  padding: var(--espacio-2) var(--espacio-3);
+  position: fixed;
+  right: calc(var(--espacio-3) + env(safe-area-inset-right));
+  text-decoration: none;
+  z-index: 100;
+}
+
+.whatsapp-fijo:hover,
+.whatsapp-fijo:focus {
+  background-color: var(--naranja-pedal);
+  border-color: var(--azul-noche);
+  color: var(--azul-noche);
+}
+
+.whatsapp-fijo:focus {
+  outline-offset: 3px;
+}
+
+/* Responsive layout */
 @media (max-width: 42rem) {
   header {
     align-items: flex-start;
@@ -255,66 +344,4 @@ tbody th {
     display: block;
     overflow-x: auto;
   }
-}
-
-.boton-reserva:hover {
-  background-color: var(--naranja-pedal);
-  border-color: var(--naranja-pedal);
-  color: var(--azul-noche);
-}
-
-.boton-reserva:focus {
-  background-color: var(--naranja-pedal);
-  border-color: var(--azul-noche);
-  color: var(--azul-noche);
-  outline: 3px solid var(--azul-noche);
-  outline-offset: 3px;
-}
-
-input,
-select,
-textarea,
-button {
-  accent-color: var(--verde-ruta);
-}
-
-input:not([type="radio"]):not([type="checkbox"]),
-select,
-textarea {
-  background-color: #FFFFFF;
-  border: 2px solid var(--gris-asfalto);
-  border-radius: 0.2rem;
-  color: var(--azul-noche);
-  padding: 0.45rem;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: var(--azul-noche);
-  outline: 3px solid var(--azul-noche);
-  outline-offset: 2px;
-}
-
-button {
-  background-color: var(--verde-ruta);
-  border: 2px solid var(--verde-ruta);
-  border-radius: 0.25rem;
-  color: #FFFFFF;
-  cursor: pointer;
-  font: inherit;
-  font-weight: 600;
-  padding: 0.7rem 1rem;
-}
-
-button:hover,
-button:focus {
-  background-color: var(--naranja-pedal);
-  border-color: var(--azul-noche);
-  color: var(--azul-noche);
-}
-
-button:focus {
-  outline: 3px solid var(--azul-noche);
-  outline-offset: 3px;
 }
