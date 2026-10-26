@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Alquila bicicletas en Medellín con Rueda Libre y descubre la ciudad con recorridos guiados, rutas y opciones para cada ciclista.">
   <link rel="icon" href="img/logo-rueda-libre.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
   <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
 </head>
 <body>
@@ -12,8 +13,8 @@
   <header>
     <img src="img/logo-rueda-libre.svg" alt="Logo de Rueda Libre" width="180" height="54">
     <nav aria-label="Navegación principal">
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
+      <ul id="menu">
+        <li><a class="activo" aria-current="page" href="index.html">Inicio</a></li>
         <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
         <li><a href="paginas/reservas.html">Reservas</a></li>
       </ul>
@@ -54,7 +55,7 @@
     </p>
     
     <img src="img/bicicleta.svg" alt="Ilustración de bicicleta urbana de alquiler" width="400" height="240">
-    <p><a href="paginas/reservas.html">Reservar ahora</a></p>
+    <p><a class="boton-reserva" href="paginas/reservas.html">Reservar ahora</a></p>
     </article>
 
     <article>

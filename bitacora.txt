@@ -193,3 +193,27 @@ se agrego a la homepage y a la descripcion publica del repositorio.
 La automatizacion .github/workflows/pages.yml despliega cada push a main.
 Verificacion online: portada, tarifas, reservas y recursos locales responden
 200 OK; el formulario y los enlaces relativos se comprobaron en produccion.
+
+MINIRETO 10 - CASCADA, ESTADOS Y ESPECIFICIDAD
+=============================================
+El menu usa id="menu" en la lista; cada enlace actual lleva class="activo" y
+aria-current="page". La regla del compañero #menu a tiene especificidad
+(1,0,1), mientras .activo tiene (0,1,0). Aunque .activo aparezca despues,
+#menu a gana por el ID, y su color queda como declaracion aplicada en Styles;
+el color de .activo aparece tachado. La correccion #menu a.activo tiene
+(1,1,1), supera ambas reglas y muestra Verde Ruta sin usar !important.
+
+Los enlaces del menu usan el selector descendiente #menu a. Hover emplea
+Azul Noche sobre Naranja Pedal (7.20:1); foco del menu usa texto blanco sobre
+Verde Ruta (5.31:1) con contorno Azul Noche. Los enlaces normales usan Verde
+Ruta sobre Crema (4.93:1) y subrayado al pasar el cursor. Los botones base usan
+blanco sobre Verde Ruta (5.31:1); hover y foco usan Azul Noche sobre Naranja
+(7.20:1). Campos y boton de envio tienen contorno de foco visible Azul Noche.
+
+En Styles se observa #menu a (1,0,1) por encima de .activo (0,1,0): el color
+gris prevalece y la declaracion verde de la clase aparece tachada. #menu a.activo
+(1,1,1) resuelve el conflicto sin !important. En DevTools :hov, el hover del
+menu/boton presenta fondo naranja y texto azul; el foco muestra contorno azul.
+El foco de teclado en Nombre completo muestra contorno solido azul de 3 px.
+La hoja compartida esta en css/styles.css; inicio la carga con css/styles.css
+y las paginas internas con ../css/styles.css.
