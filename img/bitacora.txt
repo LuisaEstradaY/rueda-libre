@@ -29,3 +29,5 @@ paginas/tarifas.html    | paginas/reservas.html   | reservas.html
 paginas/reservas.html   | index.html              | ../index.html
 paginas/reservas.html   | paginas/tarifas.html    | tarifas.html
 paginas/reservas.html   | paginas/reservas.html   | reservas.html
+
+Día 2: Esquemas de regiones de cada página.
