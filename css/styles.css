@@ -1,0 +1,135 @@
+:root {
+  --verde-ruta: #1E7A4F;
+  --naranja-pedal: #F39A2B;
+  --azul-noche: #14213D;
+  --crema: #FAF6EF;
+  --gris-asfalto: #5B6470;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--crema);
+  color: var(--azul-noche);
+}
+
+a {
+  color: var(--verde-ruta);
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--azul-noche);
+  text-decoration-thickness: 0.16em;
+}
+
+a:focus {
+  outline: 3px solid var(--azul-noche);
+  outline-offset: 3px;
+}
+
+#menu a {
+  color: var(--gris-asfalto);
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+}
+
+.activo {
+  color: var(--verde-ruta);
+  font-weight: 600;
+}
+
+#menu a.activo {
+  color: var(--verde-ruta);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 0.16em;
+  text-underline-offset: 0.3em;
+}
+
+#menu a:hover {
+  background-color: var(--naranja-pedal);
+  color: var(--azul-noche);
+  text-decoration: underline;
+}
+
+#menu a:focus {
+  background-color: var(--verde-ruta);
+  color: #FFFFFF;
+  outline: 3px solid var(--azul-noche);
+  outline-offset: 3px;
+}
+
+.boton-reserva {
+  background-color: var(--verde-ruta);
+  border: 2px solid var(--verde-ruta);
+  border-radius: 4px;
+  color: #FFFFFF;
+  display: inline-block;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+}
+
+.boton-reserva:hover {
+  background-color: var(--naranja-pedal);
+  border-color: var(--naranja-pedal);
+  color: var(--azul-noche);
+}
+
+.boton-reserva:focus {
+  background-color: var(--naranja-pedal);
+  border-color: var(--azul-noche);
+  color: var(--azul-noche);
+  outline: 3px solid var(--azul-noche);
+  outline-offset: 3px;
+}
+
+input,
+select,
+textarea,
+button {
+  accent-color: var(--verde-ruta);
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+  background-color: #FFFFFF;
+  border: 2px solid var(--gris-asfalto);
+  border-radius: 3px;
+  color: var(--azul-noche);
+  padding: 0.45rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--azul-noche);
+  outline: 3px solid var(--azul-noche);
+  outline-offset: 2px;
+}
+
+button {
+  background-color: var(--verde-ruta);
+  border: 2px solid var(--verde-ruta);
+  border-radius: 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--naranja-pedal);
+  border-color: var(--azul-noche);
+  color: var(--azul-noche);
+}
+
+button:focus {
+  outline: 3px solid var(--azul-noche);
+  outline-offset: 3px;
+}
