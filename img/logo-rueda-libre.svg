@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="108" viewBox="0 0 360 108" role="img" aria-labelledby="title">
+  <title id="title">Rueda Libre</title>
+  <rect width="360" height="108" rx="12" fill="#f4f7f1"/>
+  <g fill="none" stroke="#176b55" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
+    <circle cx="54" cy="68" r="22"/>
+    <circle cx="112" cy="68" r="22"/>
+    <path d="m54 68 18-31 20 31H54l14-23h28l16 23M72 37h-9m38 0h10"/>
+  </g>
+  <circle cx="72" cy="37" r="4" fill="#e3a72f"/>
+  <text x="148" y="57" fill="#173b32" font-family="Georgia, serif" font-size="27" font-weight="700">RUEDA LIBRE</text>
+  <text x="149" y="79" fill="#537267" font-family="Arial, sans-serif" font-size="12" letter-spacing="1.5">PEDALEA MEDELLIN</text>
+</svg>

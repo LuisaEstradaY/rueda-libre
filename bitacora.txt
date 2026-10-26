@@ -1,0 +1,54 @@
+MINIRETO 1 - RUEDA LIBRE
+========================
+
+1. Solicitud de la pagina de inicio
+-----------------------------------
+URL del documento: http://127.0.0.1:5500/index.html
+Protocolo: HTTP
+Host: 127.0.0.1 (direccion local / loopback)
+Puerto: 5500
+Ruta: /index.html
+Metodo: GET
+Codigo de estado observado: 200 OK (GET /index.html en Live Server)
+
+URL completa: http://127.0.0.1:5500/index.html
+Live Server registra el metodo GET y responde 200 OK para el documento.
+En DevTools > Network, seleccionar la solicitud de tipo document para revisar
+metodo y estado; en Elements se puede inspeccionar la estructura HTML recibida.
+
+2. Solicitud de una ruta inexistente
+------------------------------------
+URL: http://127.0.0.1:5500/promociones.html
+Protocolo: HTTP
+Host: 127.0.0.1
+Puerto: 5500
+Ruta: /promociones.html
+Metodo: GET
+Codigo registrado: 404 Not Found
+Significado: el servidor fue encontrado, pero no existe un recurso para esa
+ruta. En Live Server puede mostrarse el mensaje "Cannot GET /promociones.html".
+
+3. Rol de las tecnologias
+-------------------------
+HTML define la estructura y el contenido, por ejemplo el titulo, la navegacion
+y las secciones de alquiler de bicicletas.
+CSS controla la presentacion visual, por ejemplo los colores, el espaciado y
+la adaptacion del menu a pantallas pequeñas.
+JavaScript agrega comportamiento, por ejemplo validar los datos de un
+formulario de reserva antes de enviarlo.
+
+4. Rutas relativas del sitio
+----------------------------
+Origen                  | Destino                 | Ruta escrita
+------------------------|-------------------------|------------------------
+index.html              | index.html              | index.html
+index.html              | paginas/tarifas.html    | paginas/tarifas.html
+index.html              | paginas/reservas.html   | paginas/reservas.html
+paginas/tarifas.html    | index.html              | ../index.html
+paginas/tarifas.html    | paginas/tarifas.html    | tarifas.html
+paginas/tarifas.html    | paginas/reservas.html   | reservas.html
+paginas/reservas.html   | index.html              | ../index.html
+paginas/reservas.html   | paginas/tarifas.html    | tarifas.html
+paginas/reservas.html   | paginas/reservas.html   | reservas.html
+
+Día 2: Esquemas de regiones de cada página.
