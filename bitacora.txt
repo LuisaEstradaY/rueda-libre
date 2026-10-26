@@ -99,6 +99,7 @@ body
 |  |- section: Contacto (correo)
 |  `- section: Horario de atencion
 |     `- aside: dias y horarios en lista de definiciones
+|  `- section: Formulario de reserva (tres fieldsets)
 `- footer: nombre, correo y año
 
 No se requieren div ni span: header, nav, main, section, article, aside y
@@ -217,3 +218,12 @@ menu/boton presenta fondo naranja y texto azul; el foco muestra contorno azul.
 El foco de teclado en Nombre completo muestra contorno solido azul de 3 px.
 La hoja compartida esta en css/styles.css; inicio la carga con css/styles.css
 y las paginas internas con ../css/styles.css.
+
+MINIRETO 11 - MEDICION DEL MODELO DE CAJA
+========================================
+En DevTools/Computed, tarjeta de Alquiler de bicicletas, viewport 1440 px:
+box-sizing content-box: width computado 357.33 px, padding izquierdo/derecho
+24 px cada uno y bordes 1 px cada uno; ancho exterior medido 407.33 px.
+Con box-sizing border-box: el ancho exterior medido es 357.33 px; padding y
+bordes quedan incluidos. La diferencia es 50 px (48 px de padding + 2 px de
+borde). La regla global * usa border-box.
