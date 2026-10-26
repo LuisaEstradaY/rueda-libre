@@ -56,3 +56,50 @@ paginas/reservas.html   | paginas/tarifas.html    | tarifas.html
 paginas/reservas.html   | paginas/reservas.html   | reservas.html
 
 Día 2: Esquemas de regiones de cada página.
+
+MINIRETO 5 - ESQUEMAS SEMANTICOS
+================================
+
+Inicio (index.html)
+body
+|- header
+|  |- logo y nombre del negocio
+|  `- nav principal
+|- main
+|  |- h1 y presentacion
+|  |- section: ¿Quienes somos? (beneficios en lista)
+|  |- section: Nuestros servicios
+|  |  |- article: Alquiler de bicicletas
+|  |  |- article: Recorridos guiados
+|  |  `- article: Taller basico y mantenimiento
+|  |- section: ¿Como alquilar? (pasos en lista)
+|  `- section: Encuentranos (mapa y correo)
+`- footer: nombre, correo y año
+
+Tarifas y recorridos (paginas/tarifas.html)
+body
+|- header
+|  |- logo y nombre del negocio
+|  `- nav principal
+|- main
+|  |- h1
+|  |- section: Tarifas de alquiler (tabla)
+|  |- section: Recorridos guiados (tabla)
+|  `- section: Informacion importante
+|     `- aside: nota, horarios y lista de que llevar
+`- footer: nombre, correo y año
+
+Reservas (paginas/reservas.html)
+body
+|- header
+|  |- logo y nombre del negocio
+|  `- nav principal
+|- main
+|  |- h1
+|  |- section: Contacto (correo)
+|  `- section: Horario de atencion
+|     `- aside: dias y horarios en lista de definiciones
+`- footer: nombre, correo y año
+
+No se requieren div ni span: header, nav, main, section, article, aside y
+footer expresan las regiones y relaciones necesarias en estas tres paginas.
