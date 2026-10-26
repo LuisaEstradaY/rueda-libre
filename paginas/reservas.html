@@ -4,18 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Reserva tu bicicleta o recorrido guiado en Rueda Libre. Horarios de atención y datos de contacto.">
+  <link rel="icon" href="../img/logo-rueda-libre.svg" type="image/svg+xml">
   <title>Reservas | Rueda Libre</title>
 </head>
 <body>
 
-  
-  <nav>
-    <ul>
-      <li><a href="../index.html">Inicio</a></li>
-      <li><a href="tarifas.html">Tarifas y rutas</a></li>
-      <li><a href="reservas.html">Reservas</a></li>
-    </ul>
-  </nav>
+  <header>
+    <img src="../img/logo-rueda-libre.svg" alt="Logo de Rueda Libre" width="200" height="60">
+    <nav>
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="tarifas.html">Tarifas y rutas</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
     <h1>Reserva tu bicicleta</h1>
@@ -28,7 +31,6 @@
       </p>
     </section>
 
-    
     <section id="horarios">
       <h2>Horario de atención</h2>
       <dl>
@@ -40,65 +42,8 @@
       </dl>
     </section>
 
-    <input type="">
-
-    <section id="Reservas">
-      <form action="#" method="post">
-        <fieldset>
-          <legend>Reservas</legend>
-
-          <p>
-            <label for="nombre">Nombre completo</label>
-            <input type="name" id="nombre" name="nombre" required minlength="3">
-          </p>
-
-          <p>
-            <label for="cedula">Cédula</label>
-            <input type="number" id="cedula" name="cedula" required minlength="3">
-          </p>
-
-          <p>
-            <label for="correo">Correo electrónico</label>
-            <input type="email" id="correo" name="correo" required>
-          </p>
-
-          <p>
-            <label for="celular">Numero de celular</label>
-            <input type="tel" id="celular" name="celular" required minlength="10">
-          </p>
-
-          <p>
-            <label for="fecha">Fecha de alquiler</label>
-            <input type="date" id="fecha" name="fecha" required>
-          </p>
-
-          <p>
-            <label for="bicicleta">Tipo de bicicleta</label>
-            <select id="bicicleta" name="bicicleta" required>
-              <option value="">Selecciona una opción</option>
-              <option value="urbana">Urbana</option>
-              <option value="montana">Montaña</option>
-              <option value="electrica">Eléctrica</option>
-            </select>
-          </p>
-
-          <p>
-          <label for="plan">Tipo de plan</label>
-          <select id="plan" name="plan" required>
-            <option value="">Seleccione una opción</option>
-            <option value="unaHora">Una hora</option>
-            <option value="medioDía">Medio día</option>
-            <option value="díaCompleto">Día completo</option>
-          </select> 
-          </p>
-
-
-        </fieldset>
-      </form>
-    </section>
   </main>
 
-  
   <footer>
     <p><strong>Rueda Libre</strong> | Contacto: <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a> | &copy; 2026</p>
   </footer>
