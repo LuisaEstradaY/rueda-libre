@@ -289,3 +289,18 @@ arriba del titulo sin cubrirlo ni alterar el flujo. Las tarjetas y tablas no
 desbordan; las tablas largas tienen desplazamiento horizontal interno en movil.
 El formulario vacio sigue bloqueado por required. QA de red: las tres paginas,
 hoja CSS, logo, portada, bicicleta y ruta responden 200; no se hallaron 404.
+
+Registro de encabezado y pie
+----------------------------
+1. A 1200 px, el encabezado mantiene el logo a la izquierda y el menu a la
+   derecha, centrados verticalmente. Al reducir la ventana a 700 px, ambos
+   siguen en la misma fila.
+2. La lista del menu usa flex y tiene separacion uniforme entre enlaces.
+3. La lista permite envolver sus enlaces; a 390 px los tres todavia caben en
+   una sola fila. El encabezado pasa a dos niveles: logo arriba y menu debajo.
+4. A 700 px, el pie permanece en una sola fila; a 390 px, su contenido se
+   distribuye en dos lineas para ajustarse al ancho.
+5. La comprobacion se hizo estrechando el viewport de 1200 a 700 y luego a
+   390 px. En el ancho menor, el encabezado cambia de fila a columna y el pie
+   aumenta su altura al ajustarse. El pie observado aun aparece como un solo
+   bloque de contenido, no como tres bloques independientes.
