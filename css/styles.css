@@ -1,4 +1,4 @@
-/* Variables */
+
 :root {
   --verde-ruta: #1E7A4F;
   --naranja-pedal: #F39A2B;
@@ -13,7 +13,7 @@
   color-scheme: light;
 }
 
-/* Base and box model */
+
 *,
 *::before,
 *::after {
@@ -47,8 +47,8 @@ textarea:focus {
   outline-offset: 3px;
 }
 
-/* Shared page layout */
-header {
+
+.encabezado {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -57,7 +57,7 @@ header {
   padding: var(--espacio-2);
 }
 
-header > img {
+.header > img {
   display: block;
   height: auto;
   max-width: 100%;
@@ -90,13 +90,17 @@ main > section[aria-labelledby="inicio-titulo"] > img {
   width: 100%;
 }
 
-footer {
-  margin-inline: auto;
-  max-width: var(--ancho-contenido);
+.footer > p{
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-1);
+  justify-content: space-evenly;
   padding: var(--espacio-2);
+  background-color: darkgray;
+color: aliceblue;
 }
 
-/* Navigation */
 header nav ul {
   align-items: center;
   display: flex;
@@ -138,7 +142,7 @@ header nav ul {
   outline-offset: 3px;
 }
 
-/* Service cards and calls to action */
+
 #nuestros-servicios {
   display: grid;
   gap: var(--espacio-3);
@@ -211,7 +215,7 @@ button:focus {
   padding: var(--espacio-2) var(--espacio-4);
 }
 
-/* Tables */
+
 table {
   border-collapse: collapse;
   margin-block: var(--espacio-2);
@@ -243,7 +247,7 @@ tbody th {
   color: var(--azul-noche);
 }
 
-/* Reservation form */
+
 #formulario-reserva form {
   margin-inline: auto;
   max-width: 46rem;
@@ -306,7 +310,7 @@ input[type="checkbox"] {
   accent-color: var(--verde-ruta);
 }
 
-/* Fixed WhatsApp link */
+
 .whatsapp-fijo {
   background-color: var(--verde-ruta);
   border: 2px solid var(--verde-ruta);
@@ -333,7 +337,7 @@ input[type="checkbox"] {
   outline-offset: 3px;
 }
 
-/* Responsive layout */
+
 @media (max-width: 42rem) {
   header {
     align-items: flex-start;
