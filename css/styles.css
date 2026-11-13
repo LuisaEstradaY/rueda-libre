@@ -1,4 +1,3 @@
-
 :root {
   --verde-ruta: #1E7A4F;
   --naranja-pedal: #F39A2B;
@@ -9,27 +8,21 @@
   --espacio-2: 1rem;
   --espacio-3: 1.5rem;
   --espacio-4: 2rem;
-  --ancho-contenido: 72rem;
+  --bs-success-rgb: 30, 122, 79;
+  --bs-dark-rgb: 20, 33, 61;
+  --bs-light-rgb: 250, 246, 239;
   color-scheme: light;
-}
-
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-img {
-  height: auto;
-  max-width: 100%;
 }
 
 body {
   background-color: var(--crema);
   color: var(--azul-noche);
-  margin: 0;
-  padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+  font-family: "Times New Roman", Times, serif;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
 }
 
 a {
@@ -52,71 +45,13 @@ textarea:focus {
   outline-offset: 3px;
 }
 
-
-.encabezado {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: var(--espacio-2);
-  justify-content: center;
-  padding: var(--espacio-2);
-  text-align: center;
-}
-
-.encabezado > img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-  width: 12.5rem;
-}
-
-main {
-  margin-inline: auto;
-  max-width: var(--ancho-contenido);
-  padding: var(--espacio-2);
-  width: 100%;
-}
-
-main > section {
-  margin-block: var(--espacio-4);
-}
-
-main > h1 {
-  margin-block: var(--espacio-3);
-}
-
-.footer > p {
-  padding: var(--espacio-2);
-  background-color: darkgray;
-  color: aliceblue;
-  text-align: center;
-}
-
-header nav ul {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--espacio-1);
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 #menu a {
   color: var(--gris-asfalto);
-  display: inline-block;
-  padding: var(--espacio-1) 0.75rem;
-  text-decoration: none;
-}
-
-.activo {
-  color: var(--verde-ruta);
-  font-weight: 600;
 }
 
 #menu a.activo {
   color: var(--verde-ruta);
+  font-weight: 600;
   text-decoration: underline;
   text-decoration-thickness: 0.16em;
   text-underline-offset: 0.3em;
@@ -131,63 +66,18 @@ header nav ul {
 #menu a:focus {
   background-color: var(--verde-ruta);
   color: #FFFFFF;
-  outline-offset: 3px;
 }
 
-
-#nuestros-servicios {
-  display: grid;
-  gap: var(--espacio-3);
-  grid-template-columns: minmax(0, 1fr);
+.footer {
+  background-color: var(--azul-noche);
+  color: #FFFFFF;
 }
 
-#nuestros-servicios > h2 {
-  grid-column: 1 / -1;
-  margin-bottom: 0;
-}
-
-#nuestros-servicios article {
-  border: 1px solid var(--gris-asfalto);
-  border-radius: 0.5rem;
-  padding: var(--espacio-3);
-  position: relative;
-  width: 100%;
-}
-
-#nuestros-servicios article img {
-  border-radius: 0.25rem;
-  display: block;
-  height: auto;
-  max-width: 100%;
-  width: 100%;
-}
-
-
-#nuestra-flota{
-  display: grid;
-  gap: var(--espacio-3);
-  grid-template-columns: minmax(0, 1fr);
-}
-
-#nuestra-flota > h2 {
-  grid-column: 1 / -1;
-  margin-bottom: 0;
-}
-
-#nuestra-flota article {
-  border: 1px solid var(--gris-asfalto);
-  border-radius: 0.5rem;
-  padding: var(--espacio-3);
-  position: relative;
-  width: 100%;
-}
-
-#nuestra-flota article img {
-  border-radius: 0.25rem;
-  display: block;
-  height: auto;
-  max-width: 100%;
-  width: 100%;
+.card {
+  --bs-card-border-color: var(--gris-asfalto);
+  --bs-card-border-radius: 0.5rem;
+  --bs-card-bg: #FFFFFF;
+  color: var(--azul-noche);
 }
 
 .etiqueta-nuevo,
@@ -208,131 +98,80 @@ header nav ul {
   top: calc(-1 * var(--espacio-1));
 }
 
-.boton-reserva,
-button {
-  background-color: var(--verde-ruta);
-  border: 2px solid var(--verde-ruta);
-  border-radius: 0.25rem;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font: inherit;
-  font-weight: 600;
-  padding: 0.7rem 1rem;
-  text-decoration: none;
+.btn-success {
+  --bs-btn-color: #FFFFFF;
+  --bs-btn-bg: var(--verde-ruta);
+  --bs-btn-border-color: var(--verde-ruta);
+  --bs-btn-hover-color: var(--azul-noche);
+  --bs-btn-hover-bg: var(--naranja-pedal);
+  --bs-btn-hover-border-color: var(--azul-noche);
+  --bs-btn-focus-shadow-rgb: 20, 33, 61;
+  --bs-btn-active-color: var(--azul-noche);
+  --bs-btn-active-bg: var(--naranja-pedal);
+  --bs-btn-active-border-color: var(--azul-noche);
 }
 
-.boton-reserva:hover,
-.boton-reserva:focus,
-button:hover,
-button:focus {
-  background-color: var(--naranja-pedal);
-  border-color: var(--azul-noche);
-  color: var(--azul-noche);
-}
-
-.boton-reserva:focus,
-button:focus {
-  outline-offset: 3px;
-}
-
-#formulario-reserva button {
-  padding: var(--espacio-2) var(--espacio-4);
-}
-
-
-table {
+/* Identidad visual de las tablas de tarifas. */
+.table {
   border-collapse: collapse;
   font-size: 0.75rem;
   hyphens: auto;
-  margin-block: var(--espacio-2);
-  max-width: 100%;
-  overflow-wrap: anywhere;
   table-layout: fixed;
   width: 100%;
+}
+
+.table > :not(caption) > * > * {
+  background-color: transparent;
+  border: 1px solid var(--gris-asfalto);
+  color: var(--azul-noche);
+  overflow-wrap: anywhere;
+  padding: 0.25rem 0.2rem;
+}
+
+.table > thead > tr > th {
+  --bs-table-bg: var(--azul-noche);
+  --bs-table-color: #FFFFFF;
+  --bs-table-bg-state: var(--azul-noche);
+  --bs-table-color-state: #FFFFFF;
+  background-color: var(--azul-noche);
+  color: #FFFFFF;
+}
+
+.table > tbody > tr > th {
+  --bs-table-bg: #FFFFFF;
+  --bs-table-color: var(--azul-noche);
+  --bs-table-bg-state: #FFFFFF;
+  --bs-table-color-state: var(--azul-noche);
+  background-color: #FFFFFF;
+  color: var(--azul-noche);
 }
 
 caption {
   color: var(--azul-noche);
   font-weight: 600;
-  margin-bottom: var(--espacio-1);
-  text-align: left;
 }
 
-th,
-td {
-  border: 1px solid var(--gris-asfalto);
-  overflow-wrap: anywhere;
-  padding: 0.25rem 0.2rem;
-  text-align: left;
-}
-
-thead th {
-  background-color: var(--azul-noche);
-  color: #FFFFFF;
-}
-
-tbody th {
-  background-color: #FFFFFF;
-  color: var(--azul-noche);
-}
-
-
-#formulario-reserva form {
-  margin: 0;
-  max-width: none;
-}
-
+/* Identidad visual y estados de los controles de reservas. */
 #formulario-reserva fieldset {
   border: 1px solid var(--gris-asfalto);
   border-radius: 0.5rem;
-  margin: 0 0 var(--espacio-3);
   min-width: 0;
-  padding: var(--espacio-3);
 }
 
 #formulario-reserva legend {
-  font-weight: 600;
-  padding-inline: var(--espacio-1);
-}
-
-#formulario-reserva fieldset > p {
-  margin-block: 0 var(--espacio-2);
-}
-
-#formulario-reserva label {
-  display: block;
-  margin-bottom: var(--espacio-1);
-}
-
-#formulario-reserva input:not([type="radio"]):not([type="checkbox"]),
-#formulario-reserva select,
-#formulario-reserva textarea {
-  background-color: #FFFFFF;
-  border: 2px solid var(--gris-asfalto);
-  border-radius: 0.2rem;
   color: var(--azul-noche);
-  display: block;
-  padding: 0.45rem;
-  width: 100%;
+  font-weight: 600;
 }
 
-#formulario-reserva input:focus,
-#formulario-reserva select:focus,
-#formulario-reserva textarea:focus {
+#formulario-reserva .form-control,
+#formulario-reserva .form-select {
+  border: 2px solid var(--gris-asfalto);
+  color: var(--azul-noche);
+}
+
+#formulario-reserva .form-control:focus,
+#formulario-reserva .form-select:focus {
   border-color: var(--azul-noche);
-  outline-offset: 2px;
-}
-
-#formulario-reserva fieldset fieldset p {
-  display: inline-block;
-  margin: 0 var(--espacio-2) var(--espacio-1) 0;
-}
-
-#formulario-reserva fieldset fieldset label,
-#formulario-reserva input[type="checkbox"] + label {
-  display: inline-block;
-  margin: 0;
 }
 
 input[type="radio"],
@@ -344,15 +183,10 @@ input[type="checkbox"] {
   background-color: var(--verde-ruta);
   border: 2px solid var(--verde-ruta);
   border-radius: 0.5rem;
-  bottom: calc(var(--espacio-3) + env(safe-area-inset-bottom));
   color: #FFFFFF;
-  display: inline-block;
   font-weight: 700;
-  padding: var(--espacio-2) var(--espacio-3);
-  position: fixed;
-  right: calc(var(--espacio-3) + env(safe-area-inset-right));
   text-decoration: none;
-  z-index: 100;
+  z-index: 1030;
 }
 
 .whatsapp-fijo:hover,
@@ -360,135 +194,4 @@ input[type="checkbox"] {
   background-color: var(--naranja-pedal);
   border-color: var(--azul-noche);
   color: var(--azul-noche);
-}
-
-.whatsapp-fijo:focus {
-  outline-offset: 3px;
-}
-
-
-#portada {
-  display: grid;
-  gap: var(--espacio-3);
-  grid-template-columns: minmax(0, 1fr);
-}
-
-#portada img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-  width: 100%;
-}
-
-#nuestras-rutas {
-  display: grid;
-  gap: var(--espacio-3);
-  grid-template-columns: minmax(0, 1fr);
-}
-
-#nuestras-rutas > h2 {
-  grid-column: 1 / -1;
-  margin-bottom: 0;
-}
-
-#nuestras-rutas article {
-  border: 1px solid var(--gris-asfalto);
-  border-radius: 0.5rem;
-  padding: var(--espacio-3);
-  position: relative;
-  width: 100%;
-}
-
-.reserva-layout {
-  display: grid;
-  gap: var(--espacio-3);
-  grid-template-columns: minmax(0, 1fr);
-}
-
-.fila-campos {
-  display: grid;
-  gap: var(--espacio-2);
-  grid-template-columns: minmax(0, 1fr);
-}
-
-.fila-campos > p {
-  margin-block: 0 var(--espacio-2);
-  min-width: 0;
-}
-
-#nuestras-rutas article img {
-  border-radius: 0.25rem;
-  display: block;
-  height: auto;
-  max-width: 100%;
-  width: 100%;
-}
-
-@media (min-width: 48rem) {
-  .encabezado {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
-
-  header nav ul {
-    justify-content: flex-end;
-  }
-
-  .footer > p {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espacio-1);
-    justify-content: space-evenly;
-  }
-
-  #portada {
-    align-items: center;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  #nuestras-rutas,
-  #nuestros-servicios,
-  #nuestra-flota {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .reserva-layout {
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  }
-
-  .fila-campos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  table {
-    font-size: 0.9rem;
-  }
-
-  th,
-  td {
-    padding: var(--espacio-1) 0.4rem;
-  }
-}
-
-@media (min-width: 75rem) {
-  #portada {
-    min-height: 65vh;
-  }
-
-  #nuestras-rutas,
-  #nuestros-servicios,
-  #nuestra-flota {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  table {
-    font-size: 1rem;
-  }
-
-  th,
-  td {
-    padding: var(--espacio-1) var(--espacio-2);
-  }
 }

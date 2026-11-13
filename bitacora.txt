@@ -417,3 +417,79 @@ Verificacion: en modo dispositivo/emulacion, 360 y 575 px muestran 1 columna;
 576 y 991 px, 2; 992 y 1199 px, 3; 1200 y 1280 px, 4. Los recursos CSS y bundle
 JS de Bootstrap 5.3.9 se cargaron sin errores de red. No se enlaza styles.css
 ni se agrega CSS propio a la pagina de prueba.
+
+MINIRETO 6 - BENEFICIOS Y LLAMADA A LA ACCION CON UTILIDADES
+===========================================================
+En pruebas/catalogo-bootstrap.html se agregaron cuatro beneficios en la grilla
+de Bootstrap y una franja "Listo para rodar?" con enlace a reservas. La franja
+se apila en celular y pasa a fila desde md; la imagen decorativa se oculta en
+celular. La pagina sigue sin estilos propios ni enlace a styles.css.
+
+Cinco utilidades consultadas en la documentacion oficial 5.3
+-----------------------------------------------------------
+- g-4: agrega gutters uniformes entre columnas de la grilla.
+- text-bg-dark: combina color de fondo oscuro con color de texto legible.
+- d-none d-md-block: oculta el elemento en movil y lo muestra desde md.
+- d-flex flex-column flex-md-row: distribuye con Flexbox en columna y cambia a
+  fila desde md.
+- gap-4: agrega separacion entre elementos de un contenedor flex o grid.
+
+Verificacion: en emulacion, los beneficios se distribuyen en 1, 2 y 4 columnas
+a 360, 768 y 1280 px. La franja cambia de columna a fila a 768 px y la imagen
+solo se muestra desde ese ancho.
+
+MINIRETOS 7 Y 8 - MIGRACION A BOOTSTRAP 5.3.9
+=============================================
+Se migro inicio, tarifas y reservas. Bootstrap se carga antes de css/styles.css.
+Inicio usa la grilla y utilidades para portada, rutas, flota, beneficios,
+encabezado y pie. Tarifas ubica tablas e informacion complementaria en columnas
+8/4 desde lg; reservas distribuye formulario y contacto en 8/4 desde md y
+agrupa campos cortos con la grilla. La validacion nativa del formulario se
+conserva. styles.css ya no define distribuciones Grid/Flexbox; conserva marca,
+tipografia, colores, tarjetas, tablas y estados de controles.
+
+Tres conflictos de cascada observados en DevTools y sus soluciones
+-----------------------------------------------------------------
+1. Bootstrap aplica una tipografia de sistema al body. La regla body de
+   styles.css, cargada despues, restablece Times New Roman y los colores de
+   marca sin !important.
+2. Los enlaces .nav-link reciben el azul predeterminado de Bootstrap. El
+   selector #menu a de styles.css tiene mayor especificidad y aplica el gris
+   de marca; el estado activo usa verde.
+3. Las variables de tabla de Bootstrap interferian con el fondo y el texto
+   propios de los encabezados. Se fijaron --bs-table-bg, --bs-table-color y
+   sus variables de estado en los encabezados de tabla y fila. Los botones
+   .btn-success conservan el verde/naranja de marca con variables --bs-btn-*.
+
+Comparativa final de CSS y tiempo
+---------------------------------
+En el commit v1.5 e286be9, css/styles.css tenia 493 lineas. La version migrada
+tiene 197 lineas: 296 menos, una reduccion del 60.0%. Se verifico el historial
+local con git show e286be9:css/styles.css y se conto el archivo actual.
+
+El tiempo de construccion v1.5 con CSS propio no se registro en su momento. En
+esta migracion tampoco se inicio un cronometro antes de trabajar, asi que no se
+inventa una duracion retrospectiva para v2.0-beta. Como referencia separada y
+medida, la prueba de grilla Bootstrap del MiniReto 5 tomo 1 minuto y 47 segundos
+para una flota de siete tarjetas, no para migrar el sitio completo. No hay datos
+de tiempo comparables para las dos versiones; en una siguiente iteracion se
+debe iniciar el cronometro al comenzar cada version.
+
+Bootstrap aporto grilla responsiva, gutters y utilidades listas para usar y
+redujo el CSS propio en un 60.0%. A cambio, el HTML requiere mas clases de
+utilidad y el sitio depende del CDN. Se conservaron estilos propios donde se
+necesitaba identidad de marca y control de tablas y formularios. Conclusion:
+Bootstrap reduce el CSS de distribucion y acelera los layouts repetibles, pero
+no elimina la necesidad de CSS propio para la identidad ni de validar la
+cascada y los breakpoints.
+
+Verificacion local final
+------------------------
+En inicio, tarifas, reservas y la pagina de prueba se emularon 360, 768 y
+1280 px: el documento no excede el viewport y las imagenes caben en sus
+contenedores. Inicio muestra 1/2/3 columnas de rutas y 1/2/4 de flota a esos
+anchos; las tablas de tarifas caben sin desplazamiento lateral. Tarifas usa
+8/4 desde lg; reservas apila en celular y usa 8/4 desde md. El formulario
+vacio fue rechazado, un conjunto completo de datos valido fue aceptado y un
+documento con letras fue rechazado. Esta prueba es emulacion de viewport; no
+se registra como prueba en un celular fisico.
