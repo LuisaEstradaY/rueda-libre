@@ -382,3 +382,38 @@ La publicacion se activa con el push a main mediante .github/workflows/pages.yml
 La URL de Pages es https://luisaestraday.github.io/rueda-libre/. La comprobacion
 en un celular fisico queda pendiente; estas medidas corresponden a emulacion de
 viewport y no se registran como prueba en dispositivo real.
+
+MINIRETO 5 - COMPARATIVA DE LA FLOTA CON BOOTSTRAP 5.3
+=======================================================
+Pagina de prueba: pruebas/catalogo-bootstrap.html. Plantilla inicial, CSS y
+bundle JavaScript de Bootstrap 5.3.9 por CDN, copiados de la documentacion
+oficial: https://getbootstrap.com/docs/5.3/getting-started/introduction/.
+
+Tiempo medido
+-------------
+1 minuto y 47 segundos para reconstruir la grilla de siete tarjetas y verificar
+los breakpoints en navegador, desde 16:10:11 hasta 16:11:58 (-05:00). El tiempo
+no incluye esta anotacion ni el commit y push.
+
+Comparacion de distribucion
+---------------------------
+Version CSS propio: 19 lineas en los bloques que determinan la grilla de flota
+(10 para una columna base y el encabezado; 5 en la regla compartida desde tablet
+y 4 en la regla compartida desde escritorio). Incluye display:grid, gap,
+grid-template-columns y los cambios de 1 a 2 y 3 columnas.
+Version Bootstrap: 4 clases responsivas por tarjeta (col-12 col-sm-6 col-lg-4
+col-xl-3), repetidas en siete tarjetas = 28 apariciones; container, row y g-4
+agregan 3 apariciones de estructura/espaciado. Total: 31 apariciones de clases
+de grilla/espaciado, sin reglas CSS propias.
+
+Bootstrap aporto sin escribir media queries los breakpoints, el gutter regular,
+la grilla de 12 columnas, tarjetas de altura pareja (h-100), tipografia y
+componentes visuales basicos. A cambio se pierde control directo y ligero sobre
+los breakpoints, gutters y aspecto de marca: para personalizarlos harian falta
+clases adicionales o CSS propio. La pagina tambien depende de que el CDN este
+disponible; se fijaron version e integrity desde la documentacion oficial.
+
+Verificacion: en modo dispositivo/emulacion, 360 y 575 px muestran 1 columna;
+576 y 991 px, 2; 992 y 1199 px, 3; 1200 y 1280 px, 4. Los recursos CSS y bundle
+JS de Bootstrap 5.3.9 se cargaron sin errores de red. No se enlaza styles.css
+ni se agrega CSS propio a la pagina de prueba.
