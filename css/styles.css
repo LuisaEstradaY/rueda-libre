@@ -57,7 +57,7 @@ textarea:focus {
   padding: var(--espacio-2);
 }
 
-.header > img {
+.encabezado > img {
   display: block;
   height: auto;
   max-width: 100%;
@@ -79,18 +79,7 @@ main > h1 {
   margin-block: var(--espacio-3);
 }
 
-main > section[aria-labelledby="inicio-titulo"] {
-  min-height: 65vh;
-}
-
-main > section[aria-labelledby="inicio-titulo"] > img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-  width: 100%;
-}
-
-.footer > p{
+.footer > p {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -98,7 +87,7 @@ main > section[aria-labelledby="inicio-titulo"] > img {
   justify-content: space-evenly;
   padding: var(--espacio-2);
   background-color: darkgray;
-color: aliceblue;
+  color: aliceblue;
 }
 
 header nav ul {
@@ -198,14 +187,19 @@ header nav ul {
   width: 100%;
 }
 
-.etiqueta-nuevo {
+.etiqueta-nuevo,
+.etiqueta-precio {
   background-color: var(--naranja-pedal);
   border: 1px solid var(--azul-noche);
   border-radius: 0.25rem;
   color: var(--azul-noche);
+  display: inline-block;
   font-size: 0.875rem;
   font-weight: 700;
   padding: 0.25rem 0.75rem;
+}
+
+.etiqueta-nuevo {
   position: absolute;
   right: var(--espacio-2);
   top: calc(-1 * var(--espacio-1));
@@ -277,8 +271,8 @@ tbody th {
 
 
 #formulario-reserva form {
-  margin-inline: auto;
-  max-width: 46rem;
+  margin: 0;
+  max-width: none;
 }
 
 #formulario-reserva fieldset {
@@ -338,7 +332,6 @@ input[type="checkbox"] {
   accent-color: var(--verde-ruta);
 }
 
-
 .whatsapp-fijo {
   background-color: var(--verde-ruta);
   border: 2px solid var(--verde-ruta);
@@ -367,7 +360,7 @@ input[type="checkbox"] {
 
 
 @media (max-width: 42rem) {
-  header {
+  .encabezado {
     align-items: flex-start;
     flex-direction: column;
   }
@@ -375,5 +368,73 @@ input[type="checkbox"] {
   table {
     display: block;
     overflow-x: auto;
+  }
+}
+
+#portada {
+  align-items: center;
+  display: grid;
+  gap: var(--espacio-3);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-height: 65vh;
+}
+
+#portada img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+#nuestras-rutas {
+  display: grid;
+  gap: var(--espacio-3);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#nuestras-rutas > h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+#nuestras-rutas article {
+  border: 1px solid var(--gris-asfalto);
+  border-radius: 0.5rem;
+  padding: var(--espacio-3);
+  position: relative;
+  width: 100%;
+}
+
+.reserva-layout {
+  display: grid;
+  gap: var(--espacio-3);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+
+.fila-campos {
+  display: grid;
+  gap: var(--espacio-2);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.fila-campos > p {
+  margin-block: 0 var(--espacio-2);
+  min-width: 0;
+}
+
+#nuestras-rutas article img {
+  border-radius: 0.25rem;
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+@media (max-width: 42rem) {
+  #portada,
+  #nuestras-rutas,
+  .reserva-layout,
+  .fila-campos {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

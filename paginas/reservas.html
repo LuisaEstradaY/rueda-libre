@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <header>
+  <header class="encabezado">
     <img src="../img/logo-rueda-libre.svg" alt="Logo de Rueda Libre" width="200" height="60">
     <nav aria-label="Navegación principal">
       <ul id="menu">
@@ -24,28 +24,8 @@
   <main>
     <h1>Reserva tu bicicleta</h1>
 
-    <section id="contacto">
-      <h2>Ponte en contacto</h2>
-      <p>
-        Para consultas o asistencia con tu reserva, escríbenos a nuestro correo electrónico:
-        <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>.
-      </p>
-    </section>
-
-    <section id="horarios">
-      <h2>Horario de atención</h2>
-      <aside>
-      <dl>
-        <dt>Lunes a viernes</dt>
-        <dd>7:00 a. m. a 7:00 p. m.</dd>
-
-        <dt>Sábados, domingos y festivos</dt>
-        <dd>6:00 a. m. a 2:00 p. m.</dd>
-      </dl>
-      </aside>
-    </section>
-
-    <section id="formulario-reserva">
+    <div class="reserva-layout">
+      <section id="formulario-reserva">
       <h2>Formulario de reserva</h2>
       <form action="#" method="post">
         <fieldset>
@@ -56,19 +36,21 @@
             <input type="text" id="nombre-completo" name="nombre_completo" autocomplete="name" required minlength="3">
           </p>
 
-          <p>
-            <label for="documento">Número de documento</label>
-            <input type="text" id="documento" name="numero_documento" autocomplete="off" required pattern="[0-9]{6,10}" title="Ingresa entre 6 y 10 dígitos, sin puntos ni espacios.">
-          </p>
+          <div class="fila-campos">
+            <p>
+              <label for="documento">Número de documento</label>
+              <input type="text" id="documento" name="numero_documento" autocomplete="off" required pattern="[0-9]{6,10}" title="Ingresa entre 6 y 10 dígitos, sin puntos ni espacios.">
+            </p>
+
+            <p>
+              <label for="celular">Celular</label>
+              <input type="tel" id="celular" name="celular" autocomplete="tel" required pattern="3[0-9]{9}" title="Ingresa 10 dígitos y comienza por 3, por ejemplo 3001234567.">
+            </p>
+          </div>
 
           <p>
             <label for="correo">Correo electrónico</label>
             <input type="email" id="correo" name="correo" autocomplete="email" required>
-          </p>
-
-          <p>
-            <label for="celular">Celular</label>
-            <input type="tel" id="celular" name="celular" autocomplete="tel" required pattern="3[0-9]{9}" title="Ingresa 10 dígitos y comienza por 3, por ejemplo 3001234567.">
           </p>
         </fieldset>
 
@@ -138,11 +120,33 @@
 
         <button type="submit">Enviar reserva</button>
       </form>
-    </section>
+      </section>
+
+      <aside class="informacion-contacto" aria-label="Información de contacto y atención">
+        <section id="contacto">
+          <h2>Ponte en contacto</h2>
+          <p>
+            Para consultas o asistencia con tu reserva, escríbenos a nuestro correo electrónico:
+            <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>.
+          </p>
+        </section>
+
+        <section id="horarios">
+          <h2>Horario de atención</h2>
+          <dl>
+            <dt>Lunes a viernes</dt>
+            <dd>7:00 a. m. a 7:00 p. m.</dd>
+
+            <dt>Sábados, domingos y festivos</dt>
+            <dd>6:00 a. m. a 2:00 p. m.</dd>
+          </dl>
+        </section>
+      </aside>
+    </div>
 
   </main>
 
-  <footer>
+  <footer class="footer">
     <p><strong>Rueda Libre</strong> | Contacto: <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a> | &copy; 2026</p>
   </footer>
 
