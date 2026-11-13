@@ -330,3 +330,55 @@ dimensiones. Flexbox se reservo para alinear elementos en un solo eje. Las
 rejillas de portada, galeria, reservas y formulario usan fr; en movil se
 apilan para mantener la lectura y evitar desbordamientos. La navegacion, la
 flota y la validacion nativa del formulario permanecen sin cambios funcionales.
+
+MINIRETO 14 - RESPONSIVE MOBILE-FIRST (v1.5)
+============================================
+Comportamiento por ancho
+------------------------
+Viewport | Encabezado y pie                         | Portada / rutas / flota
+---------|------------------------------------------|-------------------------
+360 px   | Marca arriba, menu centrado debajo;      | 1 columna en cada rejilla.
+         | pie centrado y con ajuste de linea.      |
+768 px   | Marca y menu en una fila; pie Flexbox    | Portada 2; rutas 2; flota
+         | en fila con wrap si hace falta.          | 2 columnas.
+1280 px  | Marca y menu alineados a lados opuestos; | Portada 2; rutas 3; flota
+         | pie Flexbox distribuido.                 | 3 columnas.
+
+Reservas se apila en una columna a 360 px y usa Grid 2fr/1fr desde 768 px.
+Los campos de documento y celular tambien se apilan en movil y comparten dos
+columnas desde tablet. Grid resuelve filas y columnas (dos dimensiones) en
+portada, rutas, flota y reservas; Flexbox alinea el encabezado y el pie sobre
+un eje. Las imagenes usan max-width: 100% y height: auto.
+
+Problemas responsive encontrados y solucionados
+------------------------------------------------
+1. Las tablas de tarifas no cabian en el ancho movil; la de cinco columnas
+   necesitaba desplazamiento lateral. Se quitaron overflow/display de scroll,
+   se aplico table-layout fixed, tipografia de 12 px, menos relleno y quiebres
+   de texto. En 360 px ambas tablas miden 328 px y sus celdas no desbordan.
+2. Portada, rutas y reservas empezaban con columnas de escritorio, demasiado
+   estrechas en celular. Se dejaron en una columna como base y se restauraron
+   las columnas de Grid a partir de 768 px.
+3. En celular, la marca y la navegacion no quedaban centradas como una columna.
+   El encabezado ahora apila y centra ambos elementos en el estilo base; desde
+   768 px vuelve a una fila con espacio entre marca y menu.
+4. Las imagenes dependian de reglas separadas por seccion. Se agrego una regla
+   global fluida (max-width: 100%, height: auto) para que respeten siempre el
+   ancho de su contenedor.
+
+Verificacion responsive local
+------------------------------
+Se emularon viewports de 360, 768, 1200 y 1280 px en el navegador para inicio,
+tarifas y reservas. En todos los anchos, el documento coincide con el viewport
+y no hay desplazamiento horizontal; las imagenes caben en su elemento
+contenedor. En tarifas, las tablas caben completas (328 px a 360; 736 px a 768;
+1120 px desde 1200). En reservas, el formulario/contacto queda apilado a 360 px
+y en 2:1 a partir de 768. La flota muestra 1, 2 y 3 columnas respectivamente,
+conservando sus siete tarjetas. Se comprobo el limite de rutas/flota: dos
+columnas a 1199 px y tres a 1200 px. La validacion del formulario y la
+navegacion existentes se mantienen.
+
+La publicacion se activa con el push a main mediante .github/workflows/pages.yml.
+La URL de Pages es https://luisaestraday.github.io/rueda-libre/. La comprobacion
+en un celular fisico queda pendiente; estas medidas corresponden a emulacion de
+viewport y no se registran como prueba en dispositivo real.

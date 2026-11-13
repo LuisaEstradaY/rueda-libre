@@ -20,6 +20,11 @@
   box-sizing: border-box;
 }
 
+img {
+  height: auto;
+  max-width: 100%;
+}
+
 body {
   background-color: var(--crema);
   color: var(--azul-noche);
@@ -51,10 +56,11 @@ textarea:focus {
 .encabezado {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: var(--espacio-2);
-  justify-content: space-between;
+  justify-content: center;
   padding: var(--espacio-2);
+  text-align: center;
 }
 
 .encabezado > img {
@@ -80,14 +86,10 @@ main > h1 {
 }
 
 .footer > p {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--espacio-1);
-  justify-content: space-evenly;
   padding: var(--espacio-2);
   background-color: darkgray;
   color: aliceblue;
+  text-align: center;
 }
 
 header nav ul {
@@ -95,6 +97,7 @@ header nav ul {
   display: flex;
   flex-wrap: wrap;
   gap: var(--espacio-1);
+  justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -135,7 +138,7 @@ header nav ul {
 #nuestros-servicios {
   display: grid;
   gap: var(--espacio-3);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  grid-template-columns: minmax(0, 1fr);
 }
 
 #nuestros-servicios > h2 {
@@ -163,7 +166,7 @@ header nav ul {
 #nuestra-flota{
   display: grid;
   gap: var(--espacio-3);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  grid-template-columns: minmax(0, 1fr);
 }
 
 #nuestra-flota > h2 {
@@ -240,8 +243,12 @@ button:focus {
 
 table {
   border-collapse: collapse;
+  font-size: 0.75rem;
+  hyphens: auto;
   margin-block: var(--espacio-2);
   max-width: 100%;
+  overflow-wrap: anywhere;
+  table-layout: fixed;
   width: 100%;
 }
 
@@ -255,7 +262,8 @@ caption {
 th,
 td {
   border: 1px solid var(--gris-asfalto);
-  padding: var(--espacio-1) var(--espacio-2);
+  overflow-wrap: anywhere;
+  padding: 0.25rem 0.2rem;
   text-align: left;
 }
 
@@ -359,24 +367,10 @@ input[type="checkbox"] {
 }
 
 
-@media (max-width: 42rem) {
-  .encabezado {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  table {
-    display: block;
-    overflow-x: auto;
-  }
-}
-
 #portada {
-  align-items: center;
   display: grid;
   gap: var(--espacio-3);
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  min-height: 65vh;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 #portada img {
@@ -389,7 +383,7 @@ input[type="checkbox"] {
 #nuestras-rutas {
   display: grid;
   gap: var(--espacio-3);
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
 }
 
 #nuestras-rutas > h2 {
@@ -408,13 +402,13 @@ input[type="checkbox"] {
 .reserva-layout {
   display: grid;
   gap: var(--espacio-3);
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .fila-campos {
   display: grid;
   gap: var(--espacio-2);
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .fila-campos > p {
@@ -430,11 +424,71 @@ input[type="checkbox"] {
   width: 100%;
 }
 
-@media (max-width: 42rem) {
-  #portada,
+@media (min-width: 48rem) {
+  .encabezado {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  header nav ul {
+    justify-content: flex-end;
+  }
+
+  .footer > p {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-1);
+    justify-content: space-evenly;
+  }
+
+  #portada {
+    align-items: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   #nuestras-rutas,
-  .reserva-layout,
+  #nuestros-servicios,
+  #nuestra-flota {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reserva-layout {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+
   .fila-campos {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: var(--espacio-1) 0.4rem;
+  }
+}
+
+@media (min-width: 75rem) {
+  #portada {
+    min-height: 65vh;
+  }
+
+  #nuestras-rutas,
+  #nuestros-servicios,
+  #nuestra-flota {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  table {
+    font-size: 1rem;
+  }
+
+  th,
+  td {
+    padding: var(--espacio-1) var(--espacio-2);
   }
 }
