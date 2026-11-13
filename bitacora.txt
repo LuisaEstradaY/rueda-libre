@@ -304,3 +304,29 @@ Registro de encabezado y pie
    390 px. En el ancho menor, el encabezado cambia de fila a columna y el pie
    aumenta su altura al ajustarse. El pie observado aun aparece como un solo
    bloque de contenido, no como tres bloques independientes.
+
+MINIRETO 13 - LAYOUT CON GRID Y FLEXBOX
+======================================
+Decisiones de layout
+--------------------
+Caso             | Tecnica  | Motivo segun dimensiones
+-----------------|----------|------------------------------------------------
+Portada          | Grid     | Dos columnas (texto e imagen) requieren dos
+                 |          | regiones; las columnas usan fr y el texto se
+                 |          | centra verticalmente con align-items.
+Galeria de rutas | Grid     | Tres tarjetas ocupan columnas simultaneas en
+                 |          | una fila; repeat() y fr reparten el espacio.
+Reservas         | Grid     | Formulario e informacion son dos columnas con
+                 |          | proporcion 2:1, definida con 2fr y 1fr.
+Fila del         | Grid     | Documento y celular comparten una fila de dos
+formulario       |          | columnas; en pantallas estrechas pasan a una.
+Encabezado       | Flexbox  | Logo y navegacion se distribuyen en un eje;
+                 |          | align-items y justify-content los alinean.
+Pie              | Flexbox  | El contenido fluye y se reparte en un eje;
+                 |          | gap y flex-wrap permiten que se adapte.
+
+Grid se eligio para las areas con filas/columnas y relaciones en dos
+dimensiones. Flexbox se reservo para alinear elementos en un solo eje. Las
+rejillas de portada, galeria, reservas y formulario usan fr; en movil se
+apilan para mantener la lectura y evitar desbordamientos. La navegacion, la
+flota y la validacion nativa del formulario permanecen sin cambios funcionales.
